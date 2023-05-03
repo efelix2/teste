@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|assets|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+AddHandler application/x-httpd-ea-php56 .php .php5 .phtml

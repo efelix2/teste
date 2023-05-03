@@ -1,0 +1,16 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !^(index\.php|files|images|js|css|robots\.txt|favicon\.ico)
+
+RewriteCond %{HTTP_HOST} ^gtxsoftware.com.br/projetos/desenv/
+RewriteRule (.*) https://gtxsoftware.com.br/projetos/desenv//$1 [R=301,L]
+
+RewriteBase /projetos/desenv
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+php_flag display_errors On
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php56___lsphp .php .php5 .phtml
+</IfModule>
